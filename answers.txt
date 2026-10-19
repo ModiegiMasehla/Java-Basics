@@ -1,0 +1,98 @@
+DO NOT CHANGE THE FORMAT -- DO NOT CREATE A NEW txt file
+
+=== Question 1 ===
+#Answer below
+A variable is a named place where a program stores a value. Java data types tell the compiler what kind of value can be stored and what operations make sense for it. Choosing the correct type helps prevent errors and makes the code easier to understand.
+
+- `int` stores whole numbers, such as an age.
+- `double` stores decimal numbers, such as a bank balance or measurement.
+- `boolean` stores either `true` or `false`, such as whether a user is active.
+- `String` stores text, such as a person's name.
+
+Example:
+```java
+int age = 26;
+double balance = 1250.50;
+boolean active = true;
+String name = "Lebo";
+```
+Using a `String` for an age would make arithmetic and numeric comparisons harder and more error-prone. Using appropriate types communicates the purpose of each value.
+
+=== Question 2 ===
+#Answer below
+An `if` statement runs a block when its condition is true. `else if` checks another condition when earlier conditions were false. `else` runs when none of the preceding conditions matched. Conditions are built using comparison operators such as `>`, `<`, `==`, and `!=`.
+
+The logical operator `&&` means both conditions must be true. The operator `||` means at least one condition must be true. Order matters because Java checks an `if`/`else if` chain from top to bottom and stops at the first matching branch.
+
+Example:
+```java
+int age = 20;
+boolean hasTicket = true;
+
+if (age >= 18 && hasTicket) {
+    System.out.println("Entry allowed");
+} else if (age >= 18) {
+    System.out.println("A ticket is required");
+} else {
+    System.out.println("Entry not allowed");
+}
+```
+The first condition requires the person to be at least 18 and have a ticket. The next branch handles an adult who does not meet the first condition.
+
+=== Question 3 ===
+#Answer below
+Loops repeat a block of code, which avoids writing the same instructions many times.
+
+A standard `for` loop is useful when the number of repetitions is known or when an index is needed. Its three parts are initialization, condition, and update:
+```java
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+```
+It starts `i` at 0, continues while `i < 5`, and adds one after each iteration.
+
+An enhanced `for` loop visits each element in an array or collection when the index is not needed:
+```java
+int[] scores = {70, 82, 95};
+for (int score : scores) {
+    System.out.println(score);
+}
+```
+The variable `score` takes each value in the array, one at a time.
+
+A `while` loop repeats as long as its condition remains true. It is useful when the number of repetitions is not known in advance:
+```java
+int attempts = 0;
+while (attempts < 3) {
+    System.out.println("Try again");
+    attempts++;
+}
+```
+The loop variable or condition must eventually change, otherwise the loop may never stop. In this example, `attempts++` makes the condition false after three iterations.
+
+=== Question 4 ===
+#Answer below
+A method is a named block of code that performs a particular task. Methods help avoid repeated code, make programs easier to test, and give meaningful names to operations.
+
+Parameters are inputs a method receives. The return type tells Java what kind of value the method sends back. A method declared with `void` does not return a value; it may perform an action such as printing a message.
+
+Example:
+```java
+public class Calculator {
+    public int add(int first, int second) {
+        return first + second;
+    }
+
+    public void showMessage() {
+        System.out.println("Calculation complete");
+    }
+
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+        int total = calculator.add(4, 6);
+        System.out.println(total);
+        calculator.showMessage();
+    }
+}
+```
+`add` receives two integer parameters and returns their sum as an `int`. `showMessage` is `void` because it prints a message but does not return a value. Calling the method lets the program reuse its behaviour instead of repeating the implementation.
